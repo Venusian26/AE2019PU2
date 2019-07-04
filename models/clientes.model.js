@@ -7,7 +7,7 @@ clienteSchema = new mongoose.Schema({
 RFC:{
     type:String,
     required:true,
-    match:/^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/g
+   // match:/^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/g
 },
 nombre:{
     type:String,
@@ -28,12 +28,15 @@ domicilio:[{
     },
     numero:{
         type:String,
-        required:true
+        required:true,
+       
     }
 }],
 telefono:{
     type:String,
-    required:true
+    required:true,
+    length:10,
+   // match:/^([0-9]{5})+((-{1})*)+([0-9]{6})/g
 },
 email:{
     type:String,
