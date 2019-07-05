@@ -34,14 +34,11 @@ async function buscarCliente(parametro){
     }
     console.log('-------CONSULTA POR PARAMETRO---------');
     console.log(docs);
-<<<<<<< HEAD
     console.log("Operacion Terminada");
        
-=======
     console.log("OPERACION TERMINADA");
     
    
->>>>>>> 4b88f368c7672f115519ffa51cc56ff06d0059a5
 }
 )};
 

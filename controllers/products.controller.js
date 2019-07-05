@@ -37,6 +37,29 @@ async function buscarProducto(id){
     })
 }
 
+async function actualizarProducto(id,producto){
+    await Producto.findByIdAndUpdate(id,{producto},function(error,docs){
+        if(error){
+            console.log(error);
+            process.exit(1);
+        }
+        console.log('producto actualizado');
+        console.log(docs);
+        console.log("OPERACION TERMINADA");
+        
+    })};
+
+    async function eliminarproducto(id){
+        await Producto.findByIdAndRemove(id).then((docs)=>{
+            console.log('producto eliminado');
+            console.log(docs);
+            console.log("OPERACION TERMINADA");
+        }).catch((err)=>{
+            console.log("ERROR :"+"\n"+err);
+            process.exit(1);
+        })
+    }
+
 
 function comprobarstock(id){
     Producto.find({"_id":id})
@@ -57,3 +80,5 @@ function comprobarstock(id){
  module.exports.comprobarstock = comprobarstock;
  module.exports.consultaProductos = consultaProductos;
  module.exports.buscarProducto = buscarProducto;
+ module.exports.actualizarProducto = actualizarProducto;
+ module.exports.eliminarproducto = eliminarproducto;
