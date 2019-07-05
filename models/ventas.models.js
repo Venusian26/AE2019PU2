@@ -5,7 +5,7 @@ module.exports = new mongoose.Schema({
         ref:"Cliente"
     },
     fecha:{
-        type:date
+        type:Date
     },
     productos:[{
         producto_id: {

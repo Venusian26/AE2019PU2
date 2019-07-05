@@ -8,13 +8,14 @@ var marcacontroler = require('./marcas.controller');
 
 async function crearProducto(producto){
     var marca= { marca: "Kellogs"};
-    var marcacreada = marcacontroler.crearMarca(marca);
+    var marcacreada = await marcacontroler.crearMarca(marca);
+    
     producto["marca"]= marcacreada._id;
     var productocreado =  await Producto.create(producto)
      .then((data)=>{
-       
+       console.log("producto creado correctamente");
      }).catch((error)=>{
-        
+        console.log(error);
      })
      return productocreado;
  }
@@ -25,7 +26,7 @@ async function crearProducto(producto){
         console.log(error);
     }
         console.log(docs); 
-    })
+    }).populate("marca");
 }
 
 async function buscarProducto(id){ 
