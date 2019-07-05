@@ -35,8 +35,7 @@ async function buscarCliente(parametro){
     console.log('-------Consulta parametro---------');
     console.log(docs);
     console.log("Operacion Terminada");
-    
-   
+       
 }
 )};
 
